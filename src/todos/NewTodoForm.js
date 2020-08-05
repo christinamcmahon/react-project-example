@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { getTodos } from './selectors';
 import { addTodoRequest } from './thunks';
 import './NewTodoForm.css';
 
@@ -33,7 +34,7 @@ const NewTodoForm = ({ todos, onCreatePressed }) => {
 // mapStateToProps takes the state object and returns another 
 // object containing pieces that the component needs access to
 const mapStateToProps = state => ({
-    todos: state.todos,
+    todos: getTodos(state),
 });
 
 // dispatch is a function that allows the components to trigger actions
