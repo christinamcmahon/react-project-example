@@ -42,6 +42,10 @@ const RemoveButton = styled.button`
 const TodoListItem = ({ todo, onRemovePressed, onCompletedPressed }) => (
     <TodoItemContainer>
         <h3>{todo.text}</h3>
+        <p>
+            Created at:&nbsp;
+            {(new Date(todo.createdAt)).toLocaleDateString()}
+        </p>
         <ButtonsContainer>
             {todo.isCompleted ? null :
                 <CompletedButton
